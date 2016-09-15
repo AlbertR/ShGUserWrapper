@@ -1,11 +1,14 @@
+import sys
 from PyQt5 import QtGui, QtWidgets
+from tray import SystemTray
 
-if __name__ == "__main__":
-
+def main():
 	app = QtWidgets.QApplication([])
-
-	icon = QtGui.QIcon('picts/shg_icon.png')
-	tray = QtWidgets.QSystemTrayIcon(icon)
-	tray.show()
+	app.setQuitOnLastWindowClosed(False)
+	trayIcon = SystemTray()
+	trayIcon.show()
 
 	app.exec_()
+
+if __name__ == "__main__":
+	main()
